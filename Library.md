@@ -23,7 +23,7 @@ this target must also be rebuilt.
 To keep track of failing builds or user interruption, each build is given a
 unique number that is monotonically increased from the creation of the database.
 This number is 64-bit, which gives quite a bit of headroom in the database. If
-ever the number reaches 0xFFFFFFFFFFFFFFFF, the entire database is rebuilt.
+ever the number reaches `0xFFFFFFFFFFFFFFFF`, the entire database is rebuilt.
 Every time a build starts, a new number is provided. This ensures that as
 dependencies are updated, it's easy to keep track of which targets are stale
 due to a depedency being newer than a target. This also ensures that the build
