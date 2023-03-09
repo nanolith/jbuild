@@ -73,3 +73,19 @@ an error.
 
 Database
 --------
+
+Serializing data between RAM and the database is simple as long as data
+structures are kept to "plain old data" with no pointers to any other location
+in memory. All keys must make use of a string table that is also stored in
+the database. When keys are first looked up, they are converted to a numeric
+value through the string table. The numeric value is a monotonically increasing
+64-bit value, which ensures that the key space is large enough for any project.
+
+Because these data structures are "plain old data", their size is known at
+compile time. New data values can be allocated on the stack, and stored data
+values can be accessed directly in the database. The operating system kernel can
+deal with caching this data. Most likely, for many small projects, a couple of
+database accesses would end with most of the database cached in RAM already.
+
+We make use of LMDB as the data store. This has the advantage of being both fast
+and free, with fewer tunables required for use than Berkeley DB.
