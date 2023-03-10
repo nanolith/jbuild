@@ -5,9 +5,9 @@ This is Justin's Opinionated Build System. Currently, it's just a set of notes
 that I'm making for the sort of build system I want, but I'm going to write a
 build library and eventually an implementation.
 
-I REALLY like Shake. But, it's been practically impossible to drive adoption for
-this tool. Haskell has been a hard sell, and it's even a harder sell if just the
-build system is a Haskell DSL. That being said, Shake is probably where this
+I _really_ like Shake. But, it's been practically impossible to drive adoption
+for this tool. Haskell has been a hard sell, and it's even a harder sell if just
+the build system is a Haskell DSL. That being said, Shake is probably where this
 project will start.
 
 My goals are to build up a reasonable library for defining dependencies, rules,
